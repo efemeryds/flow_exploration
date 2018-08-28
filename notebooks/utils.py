@@ -2,10 +2,9 @@ import os.path
 import urllib
 import pandas as pd
 
-
 def load_channel_data(site_id, channel_id):
     series_id = '%d-%d' % (site_id, channel_id)
-    file_path = '../dataset/channels.csv'
+    file_path = '../dataset/channels-%s.csv' % series_id
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path, parse_dates=['time'])
     else:
